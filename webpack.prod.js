@@ -11,7 +11,7 @@ module.exports = {
   output: {
     filename: 'main.[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath:'/To-Do-List-Webpack/'
+    publicPath:'/leaderboard/'
   },
   mode: 'production',
   devtool: false,
