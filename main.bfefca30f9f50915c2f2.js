@@ -511,6 +511,82 @@ function styleTagTransform(css, styleElement) {
 
 module.exports = styleTagTransform;
 
+/***/ }),
+
+/***/ "./src/modules/requests.js":
+/*!*********************************!*\
+  !*** ./src/modules/requests.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "receivedData": () => (/* binding */ receivedData),
+/* harmony export */   "sendLeaderScore": () => (/* binding */ sendLeaderScore)
+/* harmony export */ });
+const apiURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/leaderProj08ScorE00Mit/scores/';
+
+// #################### POST User-Data to API ######
+const sendLeaderScore = async (leaderData) => {
+  await fetch(apiURL, {
+    method: 'POST',
+    body: JSON.stringify(leaderData),
+    headers: { 'Content-type': 'application/json; charset=UTF-8' },
+  });
+};
+
+// #################### Fetch User-Data from API ######
+const receivedData = async () => { // eslint-disable-line
+  try {
+    const response = await fetch(apiURL);
+    if (response.status === 200) {
+      const data = await response.json();
+      return data;
+    }
+  } catch (e) {
+    return e;
+  }
+};
+
+
+/***/ }),
+
+/***/ "./src/modules/userInterface.js":
+/*!**************************************!*\
+  !*** ./src/modules/userInterface.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./requests.js */ "./src/modules/requests.js");
+
+
+const updateUi = async () => {
+  const data = await (0,_requests_js__WEBPACK_IMPORTED_MODULE_0__.receivedData)();
+  const listBody = document.getElementById('list-body');
+  const fregment = document.createDocumentFragment();
+  data.result.forEach((data) => {
+    const li = document.createElement('li');
+    li.className = 'score-list';
+
+    const paraName = document.createElement('p');
+    paraName.textContent = `Name: ${data.user}`;
+    const paraScore = document.createElement('p');
+    paraScore.textContent = `Score: ${data.score}`;
+
+    li.appendChild(paraName);
+    li.appendChild(paraScore);
+    fregment.appendChild(li);
+  });
+  listBody.appendChild(fregment);
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (updateUi);
+
+
 /***/ })
 
 /******/ 	});
@@ -594,67 +670,29 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
+/* harmony import */ var _modules_userInterface_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/userInterface.js */ "./src/modules/userInterface.js");
+/* harmony import */ var _modules_requests_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/requests.js */ "./src/modules/requests.js");
 
 
-const leaderForm = document.getElementById('form-score'),
-  leaderName = document.getElementById('name'),
-  leaderScore = document.getElementById('score'),
-  refresh = document.getElementById('refresh');
 
-// https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/leaderProj08ScorE00Mit/scores/
-const apiURL =
-  'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/leaderProj08ScorE00Mit/scores/';
 
-const sendLeaderScore = async (leaderData) => {
-  await fetch(apiURL, {
-    method: 'POST',
-    body: JSON.stringify(leaderData),
-    headers: { 'Content-type': 'application/json; charset=UTF-8' },
-  });
-};
+const leaderForm = document.getElementById('form-score');
+const leaderName = document.getElementById('name');
+const leaderScore = document.getElementById('score');
+const refresh = document.getElementById('refresh');
 
-const updateUi = async () => {
-  const data = await receivedData();
-  const listBody = document.getElementById('list-body');
-  const fregment = document.createDocumentFragment();
-  data.result.forEach((data) => {
-    const li = document.createElement('li');
-    li.className = 'score-list';
-
-    const paraName = document.createElement('p');
-    paraName.textContent = `Name: ${data.user}`;
-    const paraScore = document.createElement('p');
-    paraScore.textContent = `Score: ${data.score}`;
-
-    li.appendChild(paraName);
-    li.appendChild(paraScore);
-    fregment.appendChild(li);
-  });
-  listBody.appendChild(fregment);
-};
-
-const receivedData = async () => {
-  try {
-    const response = await fetch(apiURL);
-    if (response.status === 200) {
-      const data = await response.json();
-      return data;
-    }
-  } catch (e) {
-    console.log(e);
-  }
-};
-
+// #################### Sending User-Data To API ######
 const sendingData = () => {
   const leaderData = {
     user: leaderName.value,
     score: leaderScore.value,
   };
-  sendLeaderScore(leaderData);
+  (0,_modules_requests_js__WEBPACK_IMPORTED_MODULE_2__.sendLeaderScore)(leaderData);
   leaderName.value = '';
   leaderScore.value = '';
 };
 
+// #################### EventListeners ######
 leaderForm.addEventListener('submit', (e) => {
   e.preventDefault();
   sendingData();
@@ -663,11 +701,11 @@ leaderForm.addEventListener('submit', (e) => {
 refresh.addEventListener('click', () => {
   const listBody = document.getElementById('list-body');
   listBody.innerHTML = '';
-  updateUi()
+  (0,_modules_userInterface_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  updateUi();
+  (0,_modules_userInterface_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
 });
 
 })();
