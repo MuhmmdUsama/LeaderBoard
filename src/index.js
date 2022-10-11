@@ -2,10 +2,10 @@ import './index.css';
 import updateUi from './modules/userInterface.js';
 import { sendLeaderScore } from './modules/requests.js';
 
-const leaderForm = document.getElementById('form-score'),
-  leaderName = document.getElementById('name'),
-  leaderScore = document.getElementById('score'),
-  refresh = document.getElementById('refresh');
+const leaderForm = document.getElementById('form-score');
+const leaderName = document.getElementById('name');
+const leaderScore = document.getElementById('score');
+const refresh = document.getElementById('refresh');
 
 // #################### Sending User-Data To API ######
 const sendingData = () => {

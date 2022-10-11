@@ -1,5 +1,4 @@
-const apiURL =
-  'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/leaderProj08ScorE00Mit/scores/';
+const apiURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/leaderProj08ScorE00Mit/scores/';
 
 // #################### POST User-Data to API ######
 export const sendLeaderScore = async (leaderData) => {
@@ -11,7 +10,7 @@ export const sendLeaderScore = async (leaderData) => {
 };
 
 // #################### Fetch User-Data from API ######
-export const receivedData = async () => {
+export const receivedData = async () => { // eslint-disable-line
   try {
     const response = await fetch(apiURL);
     if (response.status === 200) {
@@ -19,6 +18,6 @@ export const receivedData = async () => {
       return data;
     }
   } catch (e) {
-    console.log(e);
+    return e;
   }
 };
