@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.dev.js",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/MuhmmdUsama/LeaderBoard.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "MuhmmdUsama",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MuhmmdUsama/LeaderBoard/issues"
