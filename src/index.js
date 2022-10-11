@@ -2,23 +2,8 @@ import './index.css';
 
 const leaderForm = document.getElementById('form-score'),
   leaderName = document.getElementById('name'),
-  leaderScore = document.getElementById('score');
-
-const sendingData = () => {
-    const leaderData = {
-        user: leaderName.value,
-        score: leaderScore.value,
-    };
-    sendLeaderScore(leaderData);
-    console.log(leaderData);
-      leaderName.value = '';
-      leaderScore.value = '';
-};
-
-leaderForm.addEventListener('submit', (e)=>{
-    e.preventDefault();
-    sendingData()
-});
+  leaderScore = document.getElementById('score'),
+  refresh = document.getElementById('refresh');
 
 // https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/leaderProj08ScorE00Mit/scores/
 const apiURL =
@@ -32,15 +17,54 @@ const sendLeaderScore = async (leaderData) => {
   });
 };
 
+const updateUi = async () => {
+  const data = await receivedData();
+  const listBody = document.getElementById('list-body');
+  const fregment = document.createDocumentFragment();
+  data.result.forEach((data) => {
+    const li = document.createElement('li');
+    li.className = 'score-list';
+
+    const paraName = document.createElement('p');
+    paraName.textContent = `Name: ${data.user}`;
+    const paraScore = document.createElement('p');
+    paraScore.textContent = `Score: ${data.score}`;
+
+    li.appendChild(paraName);
+    li.appendChild(paraScore);
+    fregment.appendChild(li);
+  });
+  listBody.appendChild(fregment);
+};
+
 const receivedData = async () => {
   try {
     const response = await fetch(apiURL);
     if (response.status === 200) {
       const data = await response.json();
-      updateUi(data);
+      return data;
     }
   } catch (e) {
     console.log(e);
   }
 };
-receivedData();
+
+const sendingData = () => {
+  const leaderData = {
+    user: leaderName.value,
+    score: leaderScore.value,
+  };
+  sendLeaderScore(leaderData);
+  leaderName.value = '';
+  leaderScore.value = '';
+};
+
+leaderForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  sendingData();
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateUi();
+});

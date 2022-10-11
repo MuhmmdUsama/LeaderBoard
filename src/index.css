@@ -71,7 +71,7 @@ input {
   font-size: 1.2rem;
 }
 
-.list-body {
+#list-body {
   height: 70vh;
   overflow-y: scroll;
 }
