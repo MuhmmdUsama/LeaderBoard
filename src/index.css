@@ -91,7 +91,7 @@ input {
   height: 15rem;
 }
 
-.form-score {
+#form-score {
   display: flex;
   flex-direction: column;
   padding: 1rem;
