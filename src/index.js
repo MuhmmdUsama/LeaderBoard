@@ -67,7 +67,7 @@ leaderForm.addEventListener('submit', (e) => {
 refresh.addEventListener('click', () => {
   const listBody = document.getElementById('list-body');
   listBody.innerHTML = '';
-  updateUi()
+  updateUi();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
