@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  font-family: Verdana, Geneva, Tahoma, sans-serif;\r\n  color: #686868;\r\n}\r\n\r\nh1 {\r\n  background: rgba(255, 255, 255, 0.2);\r\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\r\n  backdrop-filter: blur(0.5px);\r\n  -webkit-backdrop-filter: blur(0.5px);\r\n  border-radius: 10px;\r\n  border: 1px solid rgba(255, 255, 255, 0.18);\r\n  text-align: center;\r\n  padding: 1rem;\r\n}\r\n\r\nmain {\r\n  margin: 2rem auto;\r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: space-around;\r\n}\r\n\r\nbutton {\r\n  font-size: 1.1rem;\r\n  font-weight: bold;\r\n  color: #686868;\r\n  width: 5rem;\r\n  height: 1rem;\r\n  border: none;\r\n  cursor: pointer;\r\n  background: none;\r\n  border-radius: 10px;\r\n}\r\n\r\ninput {\r\n  width: 15rem;\r\n  height: 2.2rem;\r\n  padding: 1rem;\r\n  margin: 0.8rem;\r\n}\r\n\r\n.style-section {\r\n  background: rgba(255, 255, 255, 0.2);\r\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\r\n  border-radius: 10px;\r\n  width: 45%;\r\n}\r\n\r\n.header-section {\r\n  padding: 1rem;\r\n  background: #e8e8e8;\r\n  color: rgb(54, 54, 54);\r\n  border-radius: 10px;\r\n  width: 100%;\r\n  margin-bottom: 0.5rem;\r\n}\r\n\r\n.list-title {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\n.score-container {\r\n  font-size: 1.2rem;\r\n}\r\n\r\n.list-body {\r\n  height: 70vh;\r\n  overflow-y: scroll;\r\n}\r\n\r\n.score-list {\r\n  background-color: #fff;\r\n  padding: 5px 20px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\n.score-list:nth-child(even) {\r\n  background: #e2e2e2;\r\n}\r\n\r\n.form-section {\r\n  height: 15rem;\r\n}\r\n\r\n.form-score {\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding: 1rem;\r\n  align-items: center;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  font-family: Verdana, Geneva, Tahoma, sans-serif;\r\n  color: #686868;\r\n}\r\n\r\nh1 {\r\n  background: rgba(255, 255, 255, 0.2);\r\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\r\n  backdrop-filter: blur(0.5px);\r\n  -webkit-backdrop-filter: blur(0.5px);\r\n  border-radius: 10px;\r\n  border: 1px solid rgba(255, 255, 255, 0.18);\r\n  text-align: center;\r\n  padding: 1rem;\r\n}\r\n\r\nmain {\r\n  margin: 2rem auto;\r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: space-around;\r\n}\r\n\r\nbutton {\r\n  font-size: 1.1rem;\r\n  font-weight: bold;\r\n  color: #686868;\r\n  width: 5rem;\r\n  height: 1rem;\r\n  border: none;\r\n  cursor: pointer;\r\n  background: none;\r\n  border-radius: 10px;\r\n}\r\n\r\ninput {\r\n  width: 15rem;\r\n  height: 2.2rem;\r\n  padding: 1rem;\r\n  margin: 0.8rem;\r\n}\r\n\r\n.style-section {\r\n  background: rgba(255, 255, 255, 0.2);\r\n  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);\r\n  border-radius: 10px;\r\n  width: 45%;\r\n}\r\n\r\n.header-section {\r\n  padding: 1rem;\r\n  background: #e8e8e8;\r\n  color: rgb(54, 54, 54);\r\n  border-radius: 10px;\r\n  width: 100%;\r\n  margin-bottom: 0.5rem;\r\n}\r\n\r\n.list-title {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\n.score-container {\r\n  font-size: 1.2rem;\r\n}\r\n\r\n#list-body {\r\n  height: 70vh;\r\n  overflow-y: scroll;\r\n}\r\n\r\n.score-list {\r\n  background-color: #fff;\r\n  padding: 5px 20px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\n.score-list:nth-child(even) {\r\n  background: #e2e2e2;\r\n}\r\n\r\n.form-section {\r\n  height: 15rem;\r\n}\r\n\r\n#form-score {\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding: 1rem;\r\n  align-items: center;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -595,7 +595,81 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
 
-console.log('Leaderboard')
+
+const leaderForm = document.getElementById('form-score'),
+  leaderName = document.getElementById('name'),
+  leaderScore = document.getElementById('score'),
+  refresh = document.getElementById('refresh');
+
+// https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/leaderProj08ScorE00Mit/scores/
+const apiURL =
+  'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/leaderProj08ScorE00Mit/scores/';
+
+const sendLeaderScore = async (leaderData) => {
+  await fetch(apiURL, {
+    method: 'POST',
+    body: JSON.stringify(leaderData),
+    headers: { 'Content-type': 'application/json; charset=UTF-8' },
+  });
+};
+
+const updateUi = async () => {
+  const data = await receivedData();
+  const listBody = document.getElementById('list-body');
+  const fregment = document.createDocumentFragment();
+  data.result.forEach((data) => {
+    const li = document.createElement('li');
+    li.className = 'score-list';
+
+    const paraName = document.createElement('p');
+    paraName.textContent = `Name: ${data.user}`;
+    const paraScore = document.createElement('p');
+    paraScore.textContent = `Score: ${data.score}`;
+
+    li.appendChild(paraName);
+    li.appendChild(paraScore);
+    fregment.appendChild(li);
+  });
+  listBody.appendChild(fregment);
+};
+
+const receivedData = async () => {
+  try {
+    const response = await fetch(apiURL);
+    if (response.status === 200) {
+      const data = await response.json();
+      return data;
+    }
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const sendingData = () => {
+  const leaderData = {
+    user: leaderName.value,
+    score: leaderScore.value,
+  };
+  sendLeaderScore(leaderData);
+  leaderName.value = '';
+  leaderScore.value = '';
+};
+
+leaderForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  sendingData();
+});
+
+refresh.addEventListener('click', () => {
+  const listBody = document.getElementById('list-body');
+  listBody.innerHTML = '';
+  updateUi()
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateUi();
+});
+
 })();
 
 /******/ })()
