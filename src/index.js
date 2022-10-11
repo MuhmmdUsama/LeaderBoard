@@ -64,6 +64,10 @@ leaderForm.addEventListener('submit', (e) => {
   sendingData();
 });
 
+refresh.addEventListener('click', () => {
+  listBody.innerHTML = '';
+  updateUi()
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   updateUi();
