@@ -71,7 +71,7 @@ input {
   font-size: 1.2rem;
 }
 
-.list-body {
+#list-body {
   height: 70vh;
   overflow-y: scroll;
 }
@@ -91,7 +91,7 @@ input {
   height: 15rem;
 }
 
-.form-score {
+#form-score {
   display: flex;
   flex-direction: column;
   padding: 1rem;

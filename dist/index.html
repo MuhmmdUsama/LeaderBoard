@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leaderboard</title>
-  <script defer src="main.c87243ce79adc7117533.js"></script></head>
+  <script defer src="main.809e5847269100ce14ff.js"></script></head>
   <body>
     <header>
       <h1>Leaderboard</h1>
@@ -17,35 +17,7 @@
           <button id="refresh">Refresh</button>
         </div>
         <div class="score-container">
-          <ol class="list-body">
-            <li class="score-list">
-              <p>Name: Usama</p>
-              <p>Score: 90</p>
-            </li>
-            <li class="score-list">
-              <p>Name: Magdy</p>
-              <p>Score: 60</p>
-            </li>
-            <li class="score-list">
-              <p>Name: Ahmed</p>
-              <p>Score: 30</p>
-            </li>
-            <li class="score-list">
-              <p>Name: Mazen</p>
-              <p>Score: 50</p>
-            </li>
-            <li class="score-list">
-              <p>Name: Maroon</p>
-              <p>Score: 50</p>
-            </li>
-            <li class="score-list">
-              <p>Name: Saad</p>
-              <p>Score: 50</p>
-            </li>
-            <li class="score-list">
-              <p>Name: Ramy</p>
-              <p>Score: 50</p>
-            </li>
+          <ol id="list-body">
           </ol>
         </div>
       </section>
@@ -53,14 +25,18 @@
       <section class="form-section style-section">
         <h3 class="header-section">Enter Your score</h3>
 
-        <form class="form-score">
+        <form id="form-score" action="submit">
           <input
+            required
             type="text"
             name="name"
             id="name"
             placeholder="Enter Your Name.."
           />
           <input
+            required
+            maxlength="3"
+            
             type="text"
             name="score"
             id="score"
