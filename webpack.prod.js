@@ -1,4 +1,5 @@
 /*eslint-disable */
+
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -11,37 +12,31 @@ module.exports = {
   output: {
     filename: 'main.[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath:'/leaderboard/'
   },
-  mode: 'production',
+  mode: 'development',
   devtool: false,
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
-        // use: ['style-loader', 'css-loader'],
       },
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),
-    new CleanWebpackPlugin(),
+    new htmlWebpackPlugin({
+      template: './src/index.html',
+      minify: {
+        removeComments: true,
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+      },
+    }),
+    new CssMinimizerPlugin(),
+    new TerserPlugin(),
   ],
-  optimization: {
-    minimizer: [
-      new CssMinimizerPlugin(),
-      new TerserPlugin(),
-      new htmlWebpackPlugin({
-        template: './src/index.html',
-        minify: {
-          removeComments: true,
-          removeAttributeQuotes: true,
-          collapseWhitespace:true,
-        },
-      }),
-    ],
-  },
 };
