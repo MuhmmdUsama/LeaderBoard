@@ -21,7 +21,8 @@ To get a local copy up and running follow these simple example steps:
 - Run `npm run dev` and it will load a live server in http://localhost:8080/
 - Run `npm run build` and it will build and optimized files for production mood
 
-##👤 Authors
+## 👤 Author
+
 👤 **Muhmmd Usama** <img src="https://avatars.githubusercontent.com/u/45886560?s=400&u=398b393687a05aa7e82482a81f0ed9c418f8f440&v=4" width="50px"/>
 
 - GitHub: [@muhmmdusama](https://github.com/muhmmdusama)
